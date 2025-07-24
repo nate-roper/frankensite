@@ -1,0 +1,72 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: 'Courier New', Courier, monospace;
+  background-color: #f4f4f4;
+  text-align: center;
+}
+
+h1 {
+  font-size: 3rem;
+  color: #333;
+}
+
+#typed::after {
+  content: '|';
+  animation: blink 0.8s steps(1) infinite;
+  display: inline-block;
+  margin-left: 4px;
+}
+
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}
+
+p {
+  font-size: 1.2rem;
+  font-family: Arial, sans-serif;
+  color: #666;
+  margin-top: 0.5rem;
+  max-width: 600px;
+}
+
+button#toggle-mode {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  background-color: #eee;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  z-index: 1000;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+  background-color: #222;
+}
+
+body.dark-mode h1 {
+  color: #33ff33; /* terminal green */
+}
+
+body.dark-mode p {
+  color: #ffffff;
+}
+
+body.dark-mode button#toggle-mode {
+  background-color: #444;
+  color: #fff;
+  border: 1px solid #666;
+}
